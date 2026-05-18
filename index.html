@@ -123,6 +123,18 @@ font-size:15px;
 color:#ddd;
 }
 
+/* POSTER */
+
+.poster{
+width:100%;
+border-radius:20px;
+margin-top:22px;
+border:2px solid #ffcc00;
+box-shadow:
+0 0 20px red,
+0 0 35px #ffcc00;
+}
+
 /* BUTONLAR */
 
 .link{
@@ -132,7 +144,7 @@ justify-content:center;
 gap:8px;
 width:100%;
 padding:17px;
-margin-top:16px;
+margin-top:18px;
 border-radius:18px;
 font-weight:bold;
 font-size:17px;
@@ -188,7 +200,7 @@ color:#bbb;
 .popup{
 position:fixed;
 inset:0;
-background:rgba(0,0,0,.85);
+background:rgba(0,0,0,.88);
 display:none;
 justify-content:center;
 align-items:center;
@@ -198,7 +210,7 @@ padding:20px;
 
 .popup-box{
 width:100%;
-max-width:350px;
+max-width:360px;
 background:#111;
 border:1px solid #ffcc00;
 border-radius:25px;
@@ -245,19 +257,39 @@ font-size:14px;
 color:#ccc;
 }
 
+.thanks{
+margin-top:20px;
+font-size:15px;
+color:#ffcc00;
+display:none;
+animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:none;
+}
+}
+
 </style>
 </head>
 
 <body>
 
 <div class="bg"></div>
+
 <div class="orb o1"></div>
 <div class="orb o2"></div>
 
 <div class="card">
 
 <img class="logo"
-src="https://resmim.net/cdn/2026/05/08/CyZCE3.jpg">
+src="https://i.hizliresim.com/8xzjgqv.jpg">
 
 <h1>GSHD MOBİL</h1>
 
@@ -265,22 +297,27 @@ src="https://resmim.net/cdn/2026/05/08/CyZCE3.jpg">
 Galatasaraylıların Premium Uygulaması
 </div>
 
-<a class="link apk" href="https://github.com/GSHDapkindir/GSHDapkindir/releases/download/v9/GS.HD_v9.apk" onclick="startDownload()">
+<img class="poster"
+src="https://resmim.net/cdn/2026/05/08/CyZCE3.jpg">
+
+<a class="link apk"
+href="#"
+onclick="startDownload()">
 📲 Uygulamayı İndir
 </a>
 
 <a class="link telegram"
-href="https://t.me/+Jc8AAkQbK9EzODZk">
+href="TELEGRAM_LINKINI_BURAYA_YAZ">
 💬 Telegram Grubuna Katıl
 </a>
 
 <div class="note">
-Android • TV Box • Tablet ve PC Uyumlu
+Android • TV Box • Tablet Uyumlu
 </div>
 
 </div>
 
-<!-- DOWNLOAD SCREEN -->
+<!-- DOWNLOAD POPUP -->
 
 <div class="popup" id="popup">
 
@@ -298,6 +335,10 @@ Android • TV Box • Tablet ve PC Uyumlu
 
 <div class="info">
 APK hazırlanıyor...
+</div>
+
+<div class="thanks" id="thanks">
+❤️ Desteğiniz için teşekkürler
 </div>
 
 </div>
@@ -324,10 +365,14 @@ if(count<=0){
 
 clearInterval(interval);
 
-/* APK LINKINI BURAYA YAZ */
+document.getElementById("thanks").style.display="block";
+
+setTimeout(()=>{
 
 window.location.href=
 "https://github.com/GSHDapkindir/GSHDapkindir/releases/download/v9/GS.HD_v9.apk";
+
+},2000);
 
 }
 
