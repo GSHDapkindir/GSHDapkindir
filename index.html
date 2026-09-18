@@ -1,784 +1,510 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width,
-initial-scale=1.0,
-maximum-scale=1.0,
-user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>GSHD Mobil</title>
 
 <style>
-
-/* =========================
-   TEMEL
-========================= */
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
 body{
-min-height:100vh;
-overflow:hidden;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-padding:20px;
-
-color:white;
-
-background:#160508;
+    min-height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    color:white;
+    background:#160508;
 }
 
-
-/* =========================
-   HAREKETLİ ARKA PLAN
-========================= */
+/* ARKA PLAN */
 
 .bg{
-position:fixed;
-inset:0;
-
-background:
-radial-gradient(
-circle at 15% 20%,
-rgba(150,0,25,.35),
-transparent 30%
-),
-
-radial-gradient(
-circle at 85% 80%,
-rgba(212,175,55,.18),
-transparent 30%
-),
-
-linear-gradient(
-135deg,
-#090204,
-#3b0712,
-#190407,
-#120306
-);
-
-background-size:180% 180%;
-
-animation:bgMove 12s ease-in-out infinite alternate;
-
-z-index:-10;
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at 15% 20%,rgba(150,0,25,.35),transparent 30%),
+        radial-gradient(circle at 85% 80%,rgba(212,175,55,.18),transparent 30%),
+        linear-gradient(135deg,#090204,#3b0712,#190407,#120306);
+    background-size:180% 180%;
+    animation:bgMove 12s ease-in-out infinite alternate;
+    z-index:-10;
 }
 
 @keyframes bgMove{
-
-0%{
-background-position:0% 0%;
+    0%{background-position:0% 0%}
+    100%{background-position:100% 100%}
 }
 
-100%{
-background-position:100% 100%;
-}
-
-}
-
-
-/* =========================
-   IŞIK ORBLARI
-========================= */
+/* IŞIKLAR */
 
 .orb{
-position:fixed;
-border-radius:50%;
-
-filter:blur(70px);
-
-opacity:.35;
-
-z-index:-5;
-
-pointer-events:none;
+    position:fixed;
+    border-radius:50%;
+    filter:blur(70px);
+    opacity:.35;
+    z-index:-5;
+    pointer-events:none;
 }
 
 .o1{
-
-width:280px;
-height:280px;
-
-background:#8b001b;
-
-top:-100px;
-left:-100px;
-
-animation:float1 7s ease-in-out infinite alternate;
+    width:280px;
+    height:280px;
+    background:#8b001b;
+    top:-100px;
+    left:-100px;
+    animation:float1 7s ease-in-out infinite alternate;
 }
 
 .o2{
-
-width:280px;
-height:280px;
-
-background:#d4af37;
-
-right:-120px;
-bottom:-120px;
-
-animation:float2 8s ease-in-out infinite alternate;
+    width:280px;
+    height:280px;
+    background:#d4af37;
+    right:-120px;
+    bottom:-120px;
+    animation:float2 8s ease-in-out infinite alternate;
 }
 
 @keyframes float1{
-
-to{
-transform:
-translate(100px,70px)
-scale(1.15);
-}
-
+    to{
+        transform:translate(100px,70px) scale(1.15);
+    }
 }
 
 @keyframes float2{
-
-to{
-transform:
-translate(-80px,-60px)
-scale(1.1);
+    to{
+        transform:translate(-80px,-60px) scale(1.1);
+    }
 }
 
-}
-
-
-/* =========================
-   ANA KART
-========================= */
+/* ANA KART */
 
 .card{
+    position:relative;
+    width:100%;
+    max-width:430px;
+    padding:34px 24px;
+    text-align:center;
 
-position:relative;
+    border-radius:30px;
 
-width:100%;
-max-width:430px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(70,8,20,.72),
+            rgba(10,2,4,.88)
+        );
 
-padding:34px 24px;
+    border:1px solid rgba(212,175,55,.45);
 
-text-align:center;
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
 
-border-radius:30px;
-
-background:
-linear-gradient(
-145deg,
-rgba(70,8,20,.72),
-rgba(10,2,4,.86)
-);
-
-border:1px solid
-rgba(212,175,55,.45);
-
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
-
-box-shadow:
-
-0 25px 80px
-rgba(0,0,0,.6),
-
-0 0 35px
-rgba(128,0,25,.25),
-
-inset 0 1px
-rgba(255,255,255,.06);
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.6),
+        0 0 35px rgba(128,0,25,.25),
+        inset 0 1px rgba(255,255,255,.06);
 }
-
-
-/* ÜST GOLD ÇİZGİ */
 
 .card:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:15%;
+    width:70%;
+    height:1px;
 
-content:"";
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d4af37,
+            transparent
+        );
 
-position:absolute;
-
-top:0;
-left:15%;
-
-width:70%;
-height:1px;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-#d4af37,
-transparent
-);
-
-box-shadow:
-0 0 15px #d4af37;
+    box-shadow:0 0 15px #d4af37;
 }
 
-
-/* =========================
-   LOGO
-========================= */
+/* LOGO */
 
 .logo{
+    width:135px;
+    height:135px;
 
-width:125px;
-height:125px;
+    object-fit:contain;
 
-border-radius:50%;
+    border-radius:22px;
 
-object-fit:cover;
+    border:2px solid #d4af37;
 
-border:3px solid #d4af37;
+    background:#090204;
 
-box-shadow:
+    padding:3px;
 
-0 0 20px
-rgba(212,175,55,.6),
+    box-shadow:
+        0 0 20px rgba(212,175,55,.65),
+        0 0 45px rgba(128,0,25,.5);
 
-0 0 50px
-rgba(128,0,25,.5);
-
-animation:logoPulse 3s ease-in-out infinite;
+    animation:logoPulse 3s ease-in-out infinite;
 }
 
 @keyframes logoPulse{
+    0%,100%{
+        transform:scale(1);
+    }
 
-0%,100%{
-transform:scale(1);
+    50%{
+        transform:scale(1.045);
+    }
 }
 
-50%{
-transform:scale(1.045);
-}
-
-}
-
-
-/* =========================
-   BAŞLIK
-========================= */
+/* BAŞLIK */
 
 h1{
+    margin-top:20px;
+    font-size:34px;
+    font-weight:900;
+    letter-spacing:3px;
 
-margin-top:20px;
+    color:#d4af37;
 
-font-size:34px;
-
-font-weight:900;
-
-letter-spacing:3px;
-
-color:#d4af37;
-
-text-shadow:
-
-0 0 8px
-rgba(212,175,55,.6),
-
-0 0 25px
-rgba(128,0,25,.7);
+    text-shadow:
+        0 0 8px rgba(212,175,55,.6),
+        0 0 25px rgba(128,0,25,.7);
 }
-
 
 .sub{
-
-margin-top:10px;
-
-font-size:14px;
-
-color:#e5d8bc;
-
-line-height:1.5;
+    margin-top:10px;
+    font-size:14px;
+    color:#e5d8bc;
+    line-height:1.5;
 }
 
-
-/* =========================
-   BUTONLAR
-========================= */
+/* BUTON */
 
 .link{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
 
-display:flex;
+    width:100%;
+    padding:17px;
+    margin-top:18px;
 
-align-items:center;
-justify-content:center;
+    border-radius:17px;
 
-gap:10px;
+    font-weight:800;
+    font-size:16px;
 
-width:100%;
+    color:white;
+    text-decoration:none;
 
-padding:17px;
+    position:relative;
+    overflow:hidden;
 
-margin-top:18px;
+    border:1px solid rgba(212,175,55,.35);
 
-border-radius:17px;
-
-font-weight:800;
-
-font-size:16px;
-
-color:white;
-
-text-decoration:none;
-
-position:relative;
-
-overflow:hidden;
-
-border:1px solid
-rgba(212,175,55,.35);
-
-transition:
-
-transform .25s,
-box-shadow .25s;
+    transition:
+        transform .25s,
+        box-shadow .25s;
 }
 
 .link:before{
+    content:"";
+    position:absolute;
 
-content:"";
+    top:0;
+    left:-120%;
 
-position:absolute;
+    width:70%;
+    height:100%;
 
-top:0;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.35),
+            transparent
+        );
 
-left:-120%;
+    transform:skewX(-20deg);
 
-width:70%;
-
-height:100%;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.35),
-transparent
-);
-
-transform:skewX(-20deg);
-
-animation:shine 3.5s infinite;
+    animation:shine 3.5s infinite;
 }
 
 @keyframes shine{
-
-0%{
-left:-120%;
+    0%{left:-120%}
+    55%,100%{left:150%}
 }
 
-55%,100%{
-left:150%;
-}
-
-}
-
-
-/* ANA İNDİR */
+/* GOLD + ŞARAP */
 
 .apk{
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #9b1227 60%,
+            #5b0615
+        );
 
-background:
-linear-gradient(
-135deg,
-#d4af37,
-#8e061c 65%,
-#5b0615
-);
-
-box-shadow:
-0 8px 30px
-rgba(128,0,25,.35);
+    box-shadow:
+        0 8px 30px rgba(128,0,25,.35);
 }
-
-
-/* TELEGRAM */
 
 .telegram{
-
-background:
-linear-gradient(
-135deg,
-#5f0a19,
-#36050d
-);
-
+    background:
+        linear-gradient(
+            135deg,
+            #701024,
+            #35050d
+        );
 }
 
-
 .link:hover{
+    transform:translateY(-3px) scale(1.02);
 
-transform:
-translateY(-3px)
-scale(1.02);
-
-box-shadow:
-0 10px 35px
-rgba(212,175,55,.2);
+    box-shadow:
+        0 10px 35px rgba(212,175,55,.2);
 }
 
 .link:active{
-
-transform:scale(.97);
+    transform:scale(.97);
 }
 
-
-/* =========================
-   ALT YAZI
-========================= */
+/* ALT */
 
 .note{
-
-margin-top:22px;
-
-font-size:12px;
-
-color:#a9989a;
-
-letter-spacing:.5px;
+    margin-top:22px;
+    font-size:12px;
+    color:#a9989a;
+    letter-spacing:.5px;
 }
 
-
-/* =========================
-   POPUP
-========================= */
+/* POPUP */
 
 .popup{
+    position:fixed;
+    inset:0;
 
-position:fixed;
+    display:none;
 
-inset:0;
+    justify-content:center;
+    align-items:center;
 
-display:none;
+    padding:20px;
 
-justify-content:center;
-align-items:center;
+    background:rgba(5,0,2,.90);
 
-padding:20px;
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
 
-background:
-rgba(5,0,2,.88);
-
-backdrop-filter:blur(12px);
--webkit-backdrop-filter:blur(12px);
-
-z-index:999;
+    z-index:999;
 }
 
-
-/* POPUP AÇILMA ANİMASYONU */
-
 .popup.show{
-
-animation:popupFade .35s ease forwards;
+    animation:popupFade .35s ease forwards;
 }
 
 @keyframes popupFade{
-
-from{
-opacity:0;
+    from{opacity:0}
+    to{opacity:1}
 }
 
-to{
-opacity:1;
-}
-
-}
-
-
-/* =========================
-   POPUP KUTUSU
-========================= */
+/* POPUP KUTU */
 
 .popup-box{
+    position:relative;
 
-position:relative;
+    width:100%;
+    max-width:350px;
 
-width:100%;
-max-width:350px;
+    padding:32px 25px;
 
-padding:32px 25px;
+    text-align:center;
 
-text-align:center;
+    border-radius:27px;
 
-border-radius:27px;
+    background:
+        linear-gradient(
+            145deg,
+            #3b0712,
+            #130306
+        );
 
-background:
-linear-gradient(
-145deg,
-#3b0712,
-#130306
-);
+    border:1px solid rgba(212,175,55,.65);
 
-border:1px solid
-rgba(212,175,55,.65);
+    box-shadow:
+        0 0 35px rgba(128,0,25,.55),
+        0 0 70px rgba(212,175,55,.13),
+        inset 0 1px rgba(255,255,255,.06);
 
-box-shadow:
+    animation:boxIn .45s cubic-bezier(.2,.8,.2,1);
+}
 
-0 0 35px
-rgba(128,0,25,.55),
+.popup-box:before{
+    content:"";
 
-0 0 70px
-rgba(212,175,55,.13),
+    position:absolute;
 
-inset 0 1px
-rgba(255,255,255,.06);
+    top:0;
+    left:15%;
 
-animation:boxIn .45s cubic-bezier(.2,.8,.2,1);
+    width:70%;
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d4af37,
+            transparent
+        );
+
+    box-shadow:0 0 15px #d4af37;
 }
 
 @keyframes boxIn{
+    from{
+        transform:scale(.75) translateY(20px);
+        opacity:0;
+    }
 
-from{
-
-transform:
-scale(.75)
-translateY(20px);
-
-opacity:0;
-
+    to{
+        transform:scale(1) translateY(0);
+        opacity:1;
+    }
 }
 
-to{
-
-transform:
-scale(1)
-translateY(0);
-
-opacity:1;
-
-}
-
-}
-
-
-/* GOLD ÜST IŞIK */
-
-.popup-box:before{
-
-content:"";
-
-position:absolute;
-
-top:0;
-left:15%;
-
-width:70%;
-height:2px;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-#d4af37,
-transparent
-);
-
-box-shadow:
-0 0 15px #d4af37;
-}
-
-
-/* =========================
-   LOADER
-========================= */
+/* LOADER */
 
 .loader{
+    width:88px;
+    height:88px;
 
-width:88px;
-height:88px;
+    border-radius:50%;
 
-border-radius:50%;
+    border:6px solid rgba(255,255,255,.08);
 
-border:
-6px solid
-rgba(255,255,255,.08);
+    border-top-color:#d4af37;
+    border-right-color:#8e061c;
 
-border-top-color:#d4af37;
+    margin:0 auto 22px;
 
-border-right-color:#8e061c;
+    animation:spin 1s linear infinite;
 
-margin:
-0 auto 22px;
-
-animation:
-spin 1s linear infinite;
-
-box-shadow:
-0 0 25px
-rgba(212,175,55,.2);
+    box-shadow:
+        0 0 25px rgba(212,175,55,.2);
 }
 
 @keyframes spin{
-
-to{
-transform:rotate(360deg);
+    to{
+        transform:rotate(360deg);
+    }
 }
 
-}
-
-
-/* =========================
-   POPUP YAZI
-========================= */
+/* YAZILAR */
 
 .downloadText{
+    font-size:21px;
+    font-weight:900;
+    letter-spacing:1px;
 
-font-size:21px;
+    color:#d4af37;
 
-font-weight:900;
-
-letter-spacing:1px;
-
-color:#d4af37;
-
-text-shadow:
-0 0 15px
-rgba(212,175,55,.35);
+    text-shadow:
+        0 0 15px rgba(212,175,55,.35);
 }
 
-
-/* =========================
-   SAYI
-========================= */
-
 .counter{
+    margin-top:12px;
 
-margin-top:12px;
+    font-size:65px;
+    font-weight:900;
+    line-height:1;
 
-font-size:65px;
+    color:white;
 
-font-weight:900;
+    text-shadow:
+        0 0 15px rgba(128,0,25,.8),
+        0 0 35px rgba(212,175,55,.2);
 
-line-height:1;
-
-color:white;
-
-text-shadow:
-
-0 0 15px
-rgba(128,0,25,.8),
-
-0 0 35px
-rgba(212,175,55,.2);
-
-animation:numberPulse 1s ease-in-out infinite;
+    animation:numberPulse 1s ease-in-out infinite;
 }
 
 @keyframes numberPulse{
+    0%,100%{
+        transform:scale(1);
+    }
 
-0%,100%{
-transform:scale(1);
+    50%{
+        transform:scale(1.08);
+    }
 }
-
-50%{
-transform:scale(1.08);
-}
-
-}
-
 
 .info{
-
-margin-top:14px;
-
-font-size:13px;
-
-color:#c6b8ba;
+    margin-top:14px;
+    font-size:13px;
+    color:#c6b8ba;
 }
 
-
-/* =========================
-   İNDİRİLİYOR NOKTALARI
-========================= */
+/* NOKTALAR */
 
 .dots:after{
-
-content:"";
-
-animation:dots 1.5s infinite;
+    content:"";
+    animation:dots 1.5s infinite;
 }
 
 @keyframes dots{
-
-0%{
-content:"";
+    0%{content:""}
+    33%{content:"."}
+    66%{content:".."}
+    100%{content:"..."}
 }
 
-33%{
-content:".";
-}
-
-66%{
-content:"..";
-}
-
-100%{
-content:"...";
-}
-
-}
-
-
-/* =========================
-   MOBİL
-========================= */
+/* MOBİL */
 
 @media(max-width:500px){
 
-body{
-padding:15px;
-}
+    body{
+        padding:15px;
+    }
 
-.card{
-padding:30px 20px;
-}
+    .card{
+        padding:30px 20px;
+    }
 
-.logo{
+    .logo{
+        width:115px;
+        height:115px;
+    }
 
-width:110px;
-height:110px;
+    h1{
+        font-size:29px;
+    }
 
-}
+    .sub{
+        font-size:13px;
+    }
 
-h1{
-
-font-size:29px;
-
-}
-
-.sub{
-
-font-size:13px;
-
-}
-
-.link{
-
-padding:16px;
-
-}
-
+    .link{
+        padding:16px;
+    }
 }
 
 </style>
-
 </head>
 
-
 <body>
-
-
-<!-- ARKA PLAN -->
 
 <div class="bg"></div>
 
@@ -786,208 +512,160 @@ padding:16px;
 <div class="orb o2"></div>
 
 
-<!-- =========================
-     ANA KART
-========================= -->
+<!-- ANA KART -->
 
 <div class="card">
 
-
 <img
-class="logo"
-src="https://raw.githubusercontent.com/GSHDapk/Logolar/refs/heads/main/file_000000001a1871f4a853af2c7fe1f13c.png"
-alt="GSHD Logo"
+    class="logo"
+    src="https://raw.githubusercontent.com/GSHDapk/Logolar/refs/heads/main/file_000000001a1871f4a853af2c7fe1f13c.png"
+    alt="GSHD Logo"
 >
 
-
-<h1>
-GSHD MOBİL
-</h1>
-
+<h1>GSHD MOBİL</h1>
 
 <div class="sub">
-
-Galatasaraylıların Premium Uygulaması
-
+    Galatasaraylıların Premium Uygulaması
 </div>
 
 
-<!-- İNDİR -->
+<!-- İNDİR BUTONU -->
 
 <a
-class="link apk"
-href="javascript:void(0)"
-onclick="startDownload()"
+    class="link apk"
+    href="javascript:void(0)"
+    onclick="startDownload()"
 >
-
-<span>📲</span>
-
-<span>
-Uygulamayı İndir
-</span>
-
+    <span>📲</span>
+    <span>Uygulamayı İndir</span>
 </a>
 
 
 <!-- TELEGRAM -->
 
 <a
-class="link telegram"
-href="https://t.me/+Jc8AAkQbK9EzODZk"
-target="_blank"
-rel="noopener"
+    class="link telegram"
+    href="https://t.me/+Jc8AAkQbK9EzODZk"
+    target="_blank"
+    rel="noopener"
 >
-
-<span>💬</span>
-
-<span>
-Telegram Grubumuza Katıl
-</span>
-
+    <span>💬</span>
+    <span>Telegram Grubumuza Katıl</span>
 </a>
 
 
 <div class="note">
-
-Android • TV Box • Tablet Uyumlu
+    Android • TV Box • Tablet Uyumlu
+</div>
 
 </div>
 
 
-</div>
-
-
-
-<!-- =========================
-     İNDİRME POPUP
-========================= -->
+<!-- İNDİRME EKRANI -->
 
 <div
-class="popup"
-id="popup"
+    class="popup"
+    id="popup"
 >
-
 
 <div class="popup-box">
 
+    <div class="loader"></div>
 
-<div class="loader"></div>
+    <div class="downloadText">
+        İNDİRME HAZIRLANIYOR<span class="dots"></span>
+    </div>
 
+    <div
+        class="counter"
+        id="counter"
+    >
+        5
+    </div>
 
-<div class="downloadText">
-
-İNDİRME HAZIRLANIYOR<span class="dots"></span>
-
-</div>
-
-
-<div
-class="counter"
-id="counter"
->
-5
-</div>
-
-
-<div class="info">
-
-İndirme <b>5 saniye</b> içinde başlayacak
-
-</div>
-
+    <div class="info">
+        İndirme <b>5 saniye</b> içinde başlayacak
+    </div>
 
 </div>
 
 </div>
-
 
 
 <script>
 
-
-/* =========================
-   APK AYARI
-========================= */
+/* APK LINK */
 
 const APK_URL =
 "https://github.com/GSHDapkindir/GSHDapkindir/releases/download/v9/GS.HD_v9.apk";
 
 
-/* =========================
-   İNDİRME
-========================= */
-
 let downloading = false;
 
 
+/* İNDİRMEYİ BAŞLAT */
+
 function startDownload(){
 
+    /* İkinci kez basılmasını engelle */
 
-/* Zaten indirme başladıysa tekrar çalıştırma */
+    if(downloading){
+        return;
+    }
 
-if(downloading){
-return;
-}
-
-downloading = true;
-
-
-/* Popup aç */
-
-const popup =
-document.getElementById("popup");
-
-popup.style.display="flex";
-
-popup.classList.add("show");
+    downloading = true;
 
 
-/* Sayaç */
+    /* Popup */
 
-let count = 5;
+    const popup =
+        document.getElementById("popup");
 
-const counter =
-document.getElementById("counter");
+    popup.style.display = "flex";
 
-counter.innerText=count;
-
-
-/* GERİ SAYIM */
-
-const interval =
-setInterval(function(){
+    popup.classList.add("show");
 
 
-count--;
+    /* Sayaç */
 
-counter.innerText=count;
+    let count = 5;
 
+    const counter =
+        document.getElementById("counter");
 
-/* 0 olduğunda */
-
-if(count <= 0){
-
-
-clearInterval(interval);
+    counter.innerText = count;
 
 
-/* APK'YA GİT */
+    /* 5 SANİYELİK GERİ SAYIM */
 
-setTimeout(function(){
+    const interval =
+        setInterval(function(){
 
-window.location.href=APK_URL;
+            count--;
 
-},300);
+            counter.innerText = count;
 
 
-}
+            if(count <= 0){
 
-},1000);
+                clearInterval(interval);
+
+
+                /* APK'YA YÖNLENDİR */
+
+                setTimeout(function(){
+
+                    window.location.href = APK_URL;
+
+                },300);
+
+            }
+
+        },1000);
 
 }
 
 </script>
-
 
 </body>
 </html>
