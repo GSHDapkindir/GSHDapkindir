@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="viewport"
+      content="width=device-width,
+      initial-scale=1.0,
+      maximum-scale=1.0,
+      user-scalable=no">
 
 <title>GSHD Mobil</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -25,73 +32,128 @@ body{
     background:#160508;
 }
 
-/* ARKA PLAN */
+/* =========================
+   ARKA PLAN
+========================= */
 
 .bg{
     position:fixed;
     inset:0;
+
     background:
-        radial-gradient(circle at 15% 20%,rgba(150,0,25,.35),transparent 30%),
-        radial-gradient(circle at 85% 80%,rgba(212,175,55,.18),transparent 30%),
-        linear-gradient(135deg,#090204,#3b0712,#190407,#120306);
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(150,0,25,.35),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(212,175,55,.18),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #090204,
+            #3b0712,
+            #190407,
+            #120306
+        );
+
     background-size:180% 180%;
+
     animation:bgMove 12s ease-in-out infinite alternate;
+
     z-index:-10;
 }
 
 @keyframes bgMove{
-    0%{background-position:0% 0%}
-    100%{background-position:100% 100%}
+
+    0%{
+        background-position:0% 0%
+    }
+
+    100%{
+        background-position:100% 100%
+    }
+
 }
 
-/* IŞIKLAR */
+/* =========================
+   IŞIKLAR
+========================= */
 
 .orb{
     position:fixed;
+
     border-radius:50%;
+
     filter:blur(70px);
+
     opacity:.35;
+
     z-index:-5;
+
     pointer-events:none;
 }
 
 .o1{
     width:280px;
     height:280px;
+
     background:#8b001b;
+
     top:-100px;
     left:-100px;
+
     animation:float1 7s ease-in-out infinite alternate;
 }
 
 .o2{
     width:280px;
     height:280px;
+
     background:#d4af37;
+
     right:-120px;
     bottom:-120px;
+
     animation:float2 8s ease-in-out infinite alternate;
 }
 
 @keyframes float1{
+
     to{
-        transform:translate(100px,70px) scale(1.15);
+        transform:
+        translate(100px,70px)
+        scale(1.15);
     }
+
 }
 
 @keyframes float2{
+
     to{
-        transform:translate(-80px,-60px) scale(1.1);
+        transform:
+        translate(-80px,-60px)
+        scale(1.1);
     }
+
 }
 
-/* ANA KART */
+/* =========================
+   ANA KART
+========================= */
 
 .card{
     position:relative;
+
     width:100%;
     max-width:430px;
+
     padding:34px 24px;
+
     text-align:center;
 
     border-radius:30px;
@@ -103,9 +165,11 @@ body{
             rgba(10,2,4,.88)
         );
 
-    border:1px solid rgba(212,175,55,.45);
+    border:1px solid
+        rgba(212,175,55,.45);
 
     backdrop-filter:blur(18px);
+
     -webkit-backdrop-filter:blur(18px);
 
     box-shadow:
@@ -116,9 +180,12 @@ body{
 
 .card:before{
     content:"";
+
     position:absolute;
+
     top:0;
     left:15%;
+
     width:70%;
     height:1px;
 
@@ -130,10 +197,13 @@ body{
             transparent
         );
 
-    box-shadow:0 0 15px #d4af37;
+    box-shadow:
+        0 0 15px #d4af37;
 }
 
-/* LOGO */
+/* =========================
+   LOGO
+========================= */
 
 .logo{
     width:135px;
@@ -153,10 +223,12 @@ body{
         0 0 20px rgba(212,175,55,.65),
         0 0 45px rgba(128,0,25,.5);
 
-    animation:logoPulse 3s ease-in-out infinite;
+    animation:
+        logoPulse 3s ease-in-out infinite;
 }
 
 @keyframes logoPulse{
+
     0%,100%{
         transform:scale(1);
     }
@@ -164,14 +236,20 @@ body{
     50%{
         transform:scale(1.045);
     }
+
 }
 
-/* BAŞLIK */
+/* =========================
+   BAŞLIK
+========================= */
 
 h1{
     margin-top:20px;
+
     font-size:34px;
+
     font-weight:900;
+
     letter-spacing:3px;
 
     color:#d4af37;
@@ -183,35 +261,50 @@ h1{
 
 .sub{
     margin-top:10px;
+
     font-size:14px;
+
     color:#e5d8bc;
+
     line-height:1.5;
 }
 
-/* BUTON */
+/* =========================
+   BUTONLAR
+========================= */
 
 .link{
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     gap:10px;
 
     width:100%;
+
     padding:17px;
+
     margin-top:18px;
 
     border-radius:17px;
 
     font-weight:800;
+
     font-size:16px;
 
     color:white;
+
     text-decoration:none;
 
     position:relative;
+
     overflow:hidden;
 
-    border:1px solid rgba(212,175,55,.35);
+    border:
+        1px solid
+        rgba(212,175,55,.35);
 
     transition:
         transform .25s,
@@ -220,6 +313,7 @@ h1{
 
 .link:before{
     content:"";
+
     position:absolute;
 
     top:0;
@@ -242,11 +336,16 @@ h1{
 }
 
 @keyframes shine{
-    0%{left:-120%}
-    55%,100%{left:150%}
-}
 
-/* GOLD + ŞARAP */
+    0%{
+        left:-120%;
+    }
+
+    55%,100%{
+        left:150%;
+    }
+
+}
 
 .apk{
     background:
@@ -270,62 +369,155 @@ h1{
         );
 }
 
-.link:hover{
-    transform:translateY(-3px) scale(1.02);
+/* =========================
+   SİSTEM GEREKSİNİMLERİ
+========================= */
+
+.requirements{
+    background:
+        linear-gradient(
+            135deg,
+            #5b0718,
+            #26030a,
+            #0d0204
+        );
+
+    border:
+        1px solid
+        rgba(212,175,55,.75);
 
     box-shadow:
-        0 10px 35px rgba(212,175,55,.2);
+        0 0 12px
+        rgba(212,175,55,.18),
+
+        0 0 28px
+        rgba(128,0,25,.25),
+
+        inset 0 0 20px
+        rgba(212,175,55,.05);
+
+    animation:
+        requirementGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes requirementGlow{
+
+    0%,100%{
+        box-shadow:
+            0 0 12px
+            rgba(212,175,55,.15),
+
+            0 0 25px
+            rgba(128,0,25,.2);
+    }
+
+    50%{
+        box-shadow:
+            0 0 20px
+            rgba(212,175,55,.35),
+
+            0 0 45px
+            rgba(128,0,25,.35);
+    }
+
+}
+
+.requirements span:first-child{
+    font-size:19px;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            #d4af37
+        );
+}
+
+.link:hover{
+
+    transform:
+        translateY(-3px)
+        scale(1.02);
+
+    box-shadow:
+        0 10px 35px
+        rgba(212,175,55,.2);
 }
 
 .link:active{
+
     transform:scale(.97);
+
 }
 
-/* ALT */
+/* =========================
+   ALT
+========================= */
 
 .note{
     margin-top:22px;
+
     font-size:12px;
+
     color:#a9989a;
+
     letter-spacing:.5px;
 }
 
-/* POPUP */
+/* =========================
+   APK POPUP
+========================= */
 
 .popup{
     position:fixed;
+
     inset:0;
 
     display:none;
 
     justify-content:center;
+
     align-items:center;
 
     padding:20px;
 
-    background:rgba(5,0,2,.90);
+    background:
+        rgba(5,0,2,.90);
 
     backdrop-filter:blur(12px);
+
     -webkit-backdrop-filter:blur(12px);
 
     z-index:999;
 }
 
 .popup.show{
-    animation:popupFade .35s ease forwards;
+
+    animation:
+        popupFade .35s ease forwards;
 }
 
 @keyframes popupFade{
-    from{opacity:0}
-    to{opacity:1}
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
 }
 
-/* POPUP KUTU */
+/* =========================
+   APK POPUP KUTU
+========================= */
 
 .popup-box{
+
     position:relative;
 
     width:100%;
+
     max-width:350px;
 
     padding:32px 25px;
@@ -341,17 +533,27 @@ h1{
             #130306
         );
 
-    border:1px solid rgba(212,175,55,.65);
+    border:
+        1px solid
+        rgba(212,175,55,.65);
 
     box-shadow:
-        0 0 35px rgba(128,0,25,.55),
-        0 0 70px rgba(212,175,55,.13),
-        inset 0 1px rgba(255,255,255,.06);
+        0 0 35px
+        rgba(128,0,25,.55),
 
-    animation:boxIn .45s cubic-bezier(.2,.8,.2,1);
+        0 0 70px
+        rgba(212,175,55,.13),
+
+        inset 0 1px
+        rgba(255,255,255,.06);
+
+    animation:
+        boxIn .45s
+        cubic-bezier(.2,.8,.2,1);
 }
 
 .popup-box:before{
+
     content:"";
 
     position:absolute;
@@ -370,78 +572,113 @@ h1{
             transparent
         );
 
-    box-shadow:0 0 15px #d4af37;
+    box-shadow:
+        0 0 15px #d4af37;
 }
 
 @keyframes boxIn{
+
     from{
-        transform:scale(.75) translateY(20px);
+        transform:
+            scale(.75)
+            translateY(20px);
+
         opacity:0;
     }
 
     to{
-        transform:scale(1) translateY(0);
+        transform:
+            scale(1)
+            translateY(0);
+
         opacity:1;
     }
+
 }
 
-/* LOADER */
+/* =========================
+   LOADER
+========================= */
 
 .loader{
+
     width:88px;
     height:88px;
 
     border-radius:50%;
 
-    border:6px solid rgba(255,255,255,.08);
+    border:
+        6px solid
+        rgba(255,255,255,.08);
 
     border-top-color:#d4af37;
+
     border-right-color:#8e061c;
 
-    margin:0 auto 22px;
+    margin:
+        0 auto 22px;
 
-    animation:spin 1s linear infinite;
+    animation:
+        spin 1s linear infinite;
 
     box-shadow:
-        0 0 25px rgba(212,175,55,.2);
+        0 0 25px
+        rgba(212,175,55,.2);
 }
 
 @keyframes spin{
+
     to{
         transform:rotate(360deg);
     }
+
 }
 
-/* YAZILAR */
+/* =========================
+   APK YAZILARI
+========================= */
 
 .downloadText{
+
     font-size:21px;
+
     font-weight:900;
+
     letter-spacing:1px;
 
     color:#d4af37;
 
     text-shadow:
-        0 0 15px rgba(212,175,55,.35);
+        0 0 15px
+        rgba(212,175,55,.35);
 }
 
 .counter{
+
     margin-top:12px;
 
     font-size:65px;
+
     font-weight:900;
+
     line-height:1;
 
     color:white;
 
     text-shadow:
-        0 0 15px rgba(128,0,25,.8),
-        0 0 35px rgba(212,175,55,.2);
+        0 0 15px
+        rgba(128,0,25,.8),
 
-    animation:numberPulse 1s ease-in-out infinite;
+        0 0 35px
+        rgba(212,175,55,.2);
+
+    animation:
+        numberPulse 1s
+        ease-in-out infinite;
 }
 
 @keyframes numberPulse{
+
     0%,100%{
         transform:scale(1);
     }
@@ -449,72 +686,484 @@ h1{
     50%{
         transform:scale(1.08);
     }
+
 }
 
 .info{
+
     margin-top:14px;
+
     font-size:13px;
+
     color:#c6b8ba;
 }
 
-/* NOKTALAR */
-
 .dots:after{
+
     content:"";
-    animation:dots 1.5s infinite;
+
+    animation:
+        dots 1.5s infinite;
 }
 
 @keyframes dots{
-    0%{content:""}
-    33%{content:"."}
-    66%{content:".."}
-    100%{content:"..."}
+
+    0%{
+        content:"";
+    }
+
+    33%{
+        content:".";
+    }
+
+    66%{
+        content:"..";
+    }
+
+    100%{
+        content:"...";
+    }
+
 }
 
-/* MOBİL */
+/* =====================================================
+   SİSTEM GEREKSİNİMLERİ POPUP
+===================================================== */
+
+.req-popup{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:15px;
+
+    background:
+        rgba(4,0,2,.95);
+
+    backdrop-filter:blur(15px);
+
+    -webkit-backdrop-filter:blur(15px);
+
+    z-index:2000;
+
+    overflow-y:auto;
+}
+
+.req-popup.show{
+
+    display:flex;
+
+    animation:
+        reqFade .3s ease;
+}
+
+@keyframes reqFade{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+.req-box{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:480px;
+
+    max-height:92vh;
+
+    overflow-y:auto;
+
+    padding:24px 18px;
+
+    border-radius:27px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #3b0712,
+            #100204
+        );
+
+    border:
+        1px solid
+        rgba(212,175,55,.7);
+
+    box-shadow:
+        0 0 40px
+        rgba(128,0,25,.6),
+
+        0 0 80px
+        rgba(212,175,55,.1);
+}
+
+.req-box:before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:15%;
+
+    width:70%;
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d4af37,
+            transparent
+        );
+
+    box-shadow:
+        0 0 18px #d4af37;
+}
+
+/* BAŞLIK */
+
+.req-title{
+
+    text-align:center;
+
+    font-size:24px;
+
+    font-weight:900;
+
+    color:#d4af37;
+
+    letter-spacing:1px;
+
+    text-shadow:
+        0 0 12px
+        rgba(212,175,55,.5);
+
+    margin-bottom:6px;
+}
+
+.req-subtitle{
+
+    text-align:center;
+
+    color:#bdaeb0;
+
+    font-size:12px;
+
+    margin-bottom:20px;
+}
+
+/* SEKME */
+
+.req-tabs{
+
+    display:flex;
+
+    gap:6px;
+
+    margin-bottom:18px;
+}
+
+.req-tab{
+
+    flex:1;
+
+    padding:11px 5px;
+
+    border-radius:12px;
+
+    border:
+        1px solid
+        rgba(212,175,55,.2);
+
+    background:#160307;
+
+    color:#9f9193;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    text-align:center;
+
+    transition:.25s;
+}
+
+.req-tab.active{
+
+    color:white;
+
+    border-color:#d4af37;
+
+    background:
+        linear-gradient(
+            135deg,
+            #701024,
+            #35050d
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(212,175,55,.15);
+}
+
+/* PANELLER */
+
+.req-panel{
+
+    display:none;
+}
+
+.req-panel.active{
+
+    display:block;
+
+    animation:
+        panelIn .3s ease;
+}
+
+@keyframes panelIn{
+
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* PANEL BAŞLIK */
+
+.platform-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:15px;
+
+    margin-bottom:12px;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(212,175,55,.1),
+            rgba(128,0,25,.12)
+        );
+
+    border:
+        1px solid
+        rgba(212,175,55,.2);
+
+    font-weight:900;
+
+    color:#fff;
+}
+
+.platform-title span{
+
+    font-size:23px;
+}
+
+/* GEREKSİNİM GRUPLARI */
+
+.req-group{
+
+    margin-bottom:12px;
+
+    padding:15px;
+
+    border-radius:16px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid
+        rgba(255,255,255,.06);
+}
+
+.req-group h3{
+
+    font-size:13px;
+
+    margin-bottom:10px;
+
+    color:#d4af37;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+}
+
+.req-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+    padding:9px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.05);
+
+    font-size:12px;
+}
+
+.req-row:last-child{
+
+    border-bottom:none;
+}
+
+.req-row .label{
+
+    color:#9f9193;
+}
+
+.req-row .value{
+
+    color:white;
+
+    font-weight:800;
+
+    text-align:right;
+}
+
+/* KAPAT */
+
+.close-req{
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    border:
+        1px solid
+        rgba(212,175,55,.4);
+
+    background:
+        linear-gradient(
+            135deg,
+            #701024,
+            #30040b
+        );
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:900;
+
+    cursor:pointer;
+}
+
+.close-req:active{
+
+    transform:scale(.97);
+}
+
+/* =========================
+   MOBİL
+========================= */
 
 @media(max-width:500px){
 
     body{
+
         padding:15px;
     }
 
     .card{
+
         padding:30px 20px;
     }
 
     .logo{
+
         width:115px;
         height:115px;
     }
 
     h1{
+
         font-size:29px;
     }
 
     .sub{
+
         font-size:13px;
     }
 
     .link{
+
         padding:16px;
     }
+
+    .req-box{
+
+        padding:22px 14px;
+
+        max-height:94vh;
+    }
+
+    .req-title{
+
+        font-size:21px;
+    }
+
 }
 
 </style>
+
 </head>
 
 <body>
 
+
 <div class="bg"></div>
 
 <div class="orb o1"></div>
+
 <div class="orb o2"></div>
 
 
-<!-- ANA KART -->
+<!-- =====================================================
+     ANA KART
+===================================================== -->
 
 <div class="card">
+
 
 <img
     class="logo"
@@ -522,22 +1171,29 @@ h1{
     alt="GSHD Logo"
 >
 
+
 <h1>GSHD MOBİL</h1>
 
+
 <div class="sub">
+
     Galatasaraylıların Premium Uygulaması
+
 </div>
 
 
-<!-- İNDİR BUTONU -->
+<!-- APK -->
 
 <a
     class="link apk"
     href="javascript:void(0)"
     onclick="startDownload()"
 >
+
     <span>📲</span>
+
     <span>Uygulamayı İndir</span>
+
 </a>
 
 
@@ -549,19 +1205,42 @@ h1{
     target="_blank"
     rel="noopener"
 >
+
     <span>💬</span>
+
     <span>Telegram Grubumuza Katıl</span>
+
+</a>
+
+
+<!-- SİSTEM GEREKSİNİMLERİ -->
+
+<a
+    class="link requirements"
+    href="javascript:void(0)"
+    onclick="openRequirements()"
+>
+
+    <span>⚙️</span>
+
+    <span>Sistem Gereksinimleri</span>
+
 </a>
 
 
 <div class="note">
+
     Android • TV Box • Tablet Uyumlu
-</div>
 
 </div>
 
 
-<!-- İNDİRME EKRANI -->
+</div>
+
+
+<!-- =====================================================
+     APK İNDİRME POPUP
+===================================================== -->
 
 <div
     class="popup"
@@ -570,22 +1249,412 @@ h1{
 
 <div class="popup-box">
 
+
     <div class="loader"></div>
 
+
     <div class="downloadText">
+
         İNDİRME HAZIRLANIYOR<span class="dots"></span>
+
     </div>
+
 
     <div
         class="counter"
         id="counter"
     >
+
         5
+
     </div>
 
+
     <div class="info">
+
         İndirme <b>5 saniye</b> içinde başlayacak
+
     </div>
+
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     SİSTEM GEREKSİNİMLERİ POPUP
+===================================================== -->
+
+<div
+    class="req-popup"
+    id="reqPopup"
+>
+
+<div class="req-box">
+
+
+    <div class="req-title">
+
+        ⚙️ SİSTEM GEREKSİNİMLERİ
+
+    </div>
+
+
+    <div class="req-subtitle">
+
+        GSHD için önerilen cihaz özellikleri
+
+    </div>
+
+
+    <!-- SEKME -->
+
+    <div class="req-tabs">
+
+
+        <div
+            class="req-tab active"
+            onclick="showReq('mobile',this)"
+        >
+
+            📱 Mobil
+
+        </div>
+
+
+        <div
+            class="req-tab"
+            onclick="showReq('tv',this)"
+        >
+
+            📺 TV Box
+
+        </div>
+
+
+        <div
+            class="req-tab"
+            onclick="showReq('pc',this)"
+        >
+
+            💻 PC
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         MOBİL
+    ========================= -->
+
+    <div
+        class="req-panel active"
+        id="req-mobile"
+    >
+
+        <div class="platform-title">
+
+            <span>📱</span>
+
+            Android Mobil / Tablet
+
+        </div>
+
+
+        <div class="req-group">
+
+            <h3>Minimum</h3>
+
+
+            <div class="req-row">
+                <span class="label">Android</span>
+                <span class="value">Android 9+</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">RAM</span>
+                <span class="value">3 GB</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">İşlemci</span>
+                <span class="value">64-bit</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">Depolama</span>
+                <span class="value">2 GB boş alan</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">Ekran</span>
+                <span class="value">720p+</span>
+            </div>
+
+
+        </div>
+
+
+        <div class="req-group">
+
+            <h3>Önerilen</h3>
+
+
+            <div class="req-row">
+                <span class="label">Android</span>
+                <span class="value">Android 11+</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">RAM</span>
+                <span class="value">4 GB+</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">İşlemci</span>
+                <span class="value">64-bit</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">Ekran</span>
+                <span class="value">1080p+</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">İnternet</span>
+                <span class="value">25 Mbps+</span>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         TV BOX
+    ========================= -->
+
+    <div
+        class="req-panel"
+        id="req-tv"
+    >
+
+        <div class="platform-title">
+
+            <span>📺</span>
+
+            Android TV / TV Box
+
+        </div>
+
+
+        <div class="req-group">
+
+            <h3>Minimum</h3>
+
+
+            <div class="req-row">
+                <span class="label">Android</span>
+                <span class="value">Android 9+</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">RAM</span>
+                <span class="value">2 GB</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">Depolama</span>
+                <span class="value">8 GB</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">İşlemci</span>
+                <span class="value">4 Çekirdek</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">Video</span>
+                <span class="value">1080p</span>
+            </div>
+
+
+        </div>
+
+
+        <div class="req-group">
+
+            <h3>Önerilen</h3>
+
+
+            <div class="req-row">
+                <span class="label">Android</span>
+                <span class="value">Android 10+</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">RAM</span>
+                <span class="value">4 GB</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">Depolama</span>
+                <span class="value">16 GB+</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">İşlemci</span>
+                <span class="value">64-bit 4 Çekirdek</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">Video</span>
+                <span class="value">4K</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">İnternet</span>
+                <span class="value">25 Mbps+</span>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         PC
+    ========================= -->
+
+    <div
+        class="req-panel"
+        id="req-pc"
+    >
+
+        <div class="platform-title">
+
+            <span>💻</span>
+
+            PC / Laptop
+
+        </div>
+
+
+        <div class="req-group">
+
+            <h3>Minimum</h3>
+
+
+            <div class="req-row">
+                <span class="label">İşletim Sistemi</span>
+                <span class="value">Windows 10 / 11</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">İşlemci</span>
+                <span class="value">Intel i3 / Ryzen 3</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">RAM</span>
+                <span class="value">4 GB</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">Ekran Kartı</span>
+                <span class="value">DirectX 11</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">İnternet</span>
+                <span class="value">10 Mbps+</span>
+            </div>
+
+
+        </div>
+
+
+        <div class="req-group">
+
+            <h3>Önerilen</h3>
+
+
+            <div class="req-row">
+                <span class="label">İşletim Sistemi</span>
+                <span class="value">Windows 11 64-bit</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">İşlemci</span>
+                <span class="value">Intel i5 / Ryzen 5</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">RAM</span>
+                <span class="value">8 GB+</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">Ekran Kartı</span>
+                <span class="value">DirectX 12</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">Depolama</span>
+                <span class="value">SSD</span>
+            </div>
+
+
+            <div class="req-row">
+                <span class="label">İnternet</span>
+                <span class="value">25 Mbps+</span>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="close-req"
+        onclick="closeRequirements()"
+    >
+
+        ✕ Kapat
+
+    </button>
+
 
 </div>
 
@@ -594,20 +1663,17 @@ h1{
 
 <script>
 
-/* APK LINK */
+/* =====================================================
+   APK
+===================================================== */
 
 const APK_URL =
 "https://github.com/GSHDapkindir/GSHDapkindir/releases/download/v9/GS.HD_v9.apk";
 
-
 let downloading = false;
 
 
-/* İNDİRMEYİ BAŞLAT */
-
 function startDownload(){
-
-    /* İkinci kez basılmasını engelle */
 
     if(downloading){
         return;
@@ -615,8 +1681,6 @@ function startDownload(){
 
     downloading = true;
 
-
-    /* Popup */
 
     const popup =
         document.getElementById("popup");
@@ -626,8 +1690,6 @@ function startDownload(){
     popup.classList.add("show");
 
 
-    /* Sayaç */
-
     let count = 5;
 
     const counter =
@@ -635,8 +1697,6 @@ function startDownload(){
 
     counter.innerText = count;
 
-
-    /* 5 SANİYELİK GERİ SAYIM */
 
     const interval =
         setInterval(function(){
@@ -651,11 +1711,10 @@ function startDownload(){
                 clearInterval(interval);
 
 
-                /* APK'YA YÖNLENDİR */
-
                 setTimeout(function(){
 
-                    window.location.href = APK_URL;
+                    window.location.href =
+                        APK_URL;
 
                 },300);
 
@@ -664,6 +1723,104 @@ function startDownload(){
         },1000);
 
 }
+
+
+/* =====================================================
+   GEREKSİNİMLERİ AÇ
+===================================================== */
+
+function openRequirements(){
+
+    const popup =
+        document.getElementById("reqPopup");
+
+    popup.classList.add("show");
+
+}
+
+
+/* =====================================================
+   GEREKSİNİMLERİ KAPAT
+===================================================== */
+
+function closeRequirements(){
+
+    const popup =
+        document.getElementById("reqPopup");
+
+    popup.classList.remove("show");
+
+}
+
+
+/* =====================================================
+   SEKME DEĞİŞTİR
+===================================================== */
+
+function showReq(id,element){
+
+    document
+        .querySelectorAll(".req-panel")
+        .forEach(function(panel){
+
+            panel.classList.remove("active");
+
+        });
+
+
+    document
+        .querySelectorAll(".req-tab")
+        .forEach(function(tab){
+
+            tab.classList.remove("active");
+
+        });
+
+
+    document
+        .getElementById("req-"+id)
+        .classList.add("active");
+
+
+    element.classList.add("active");
+
+}
+
+
+/* =====================================================
+   POPUP DIŞINA TIKLAYINCA KAPAT
+===================================================== */
+
+document
+    .getElementById("reqPopup")
+    .addEventListener(
+        "click",
+        function(e){
+
+            if(e.target === this){
+
+                closeRequirements();
+
+            }
+
+        }
+    );
+
+
+/* ESC */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "Escape"){
+
+            closeRequirements();
+
+        }
+
+    }
+);
 
 </script>
 
